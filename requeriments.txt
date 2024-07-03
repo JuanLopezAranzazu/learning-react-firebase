@@ -1,0 +1,8 @@
+npm i
+
+devDependencies
+
+dependencies
+
+npm i firebase
+npm i react-router-dom
