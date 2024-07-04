@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { UserForm } from "../components/UserForm";
 import { db } from "../firebase/firebase-config";
 import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
+import { Loading } from "../components/Loading/Loading";
 
 // Componente para editar un usuario
 export const UserEdit = () => {
@@ -48,18 +49,18 @@ export const UserEdit = () => {
     fetchUser();
   }, [id]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div>
       <h1>Editar Usuario</h1>
-      {isLoading ? (
-        <p>Cargando...</p>
-      ) : (
-        <UserForm
-          onSubmit={(data) => editUser(id, data)}
-          name={user?.name}
-          age={user?.age}
-        />
-      )}
+      <UserForm
+        onSubmit={(data) => editUser(id, data)}
+        name={user?.name}
+        age={user?.age}
+      />
     </div>
   );
 };

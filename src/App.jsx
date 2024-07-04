@@ -5,6 +5,7 @@ import { Users } from "./pages/Users";
 import { UserAdd } from "./pages/UserAdd";
 import { UserEdit } from "./pages/UserEdit";
 
+// Componente principal de la aplicación
 function App() {
   return (
     <Routes>

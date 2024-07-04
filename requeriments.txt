@@ -6,3 +6,4 @@ dependencies
 
 npm i firebase
 npm i react-router-dom
+npm i bootstrap react-bootstrap
